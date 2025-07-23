@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SistemaVenta.BLL\SistemaVenta.BLL.csproj" />
     <ProjectReference Include="..\SistemaVenta.IOC\SistemaVenta.IOC.csproj" />
     <ProjectReference Include="..\SistemVenta.DAL\SistemVenta.DAL.csproj" />
