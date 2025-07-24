@@ -7,8 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using SistemaVenta.DAL.DbContext;
-//using SistemaVenta.DAL.Interfaces;
-//using SistemaVenta.DAL.Implementacion;
+using SistemaVenta.DAL.Interfaces;
+using SistemaVenta.DAL.Implementacion;
+using SistemVenta.DAL.Interfaces;
+using SistemVenta.DAL.Implementacion;
 //using SistemaVenta.BLL.Interfaces;
 //using SistemaVenta.BLL.Implementacion;
 
@@ -18,12 +20,14 @@ namespace SistemaVenta.IOC
     {
         //Cadena de Conexión
         public static void InyectarDependencia(this IServiceCollection services, IConfiguration Configuration) {
-            services.AddDbContext<DbventaContext>(options =>
+            services.AddDbContext<DbVentaContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("CadenaSQL"));
             });
+
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            services.AddScoped<IVentaRepository, VentaRepository>();
         }
-
-
     }
 }

@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace SistemaVenta.DAL.DbContext;
 
-public partial class DbventaContext : Microsoft.EntityFrameworkCore.DbContext
+public partial class DbVentaContext : Microsoft.EntityFrameworkCore.DbContext
 {
-    public DbventaContext()
+    public DbVentaContext()
     {
     }
 
-    public DbventaContext(DbContextOptions<DbventaContext> options)
+    public DbVentaContext(DbContextOptions<DbVentaContext> options)
         : base(options)
     {
     }

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36212.18 d17.14
+VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.Entity", "SistemaVenta.Entity\SistemaVenta.Entity.csproj", "{FA8444D2-AD33-43D5-93AF-F02A9E3D2A31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemVenta.DAL", "SistemVenta.DAL\SistemVenta.DAL.csproj", "{E6A0C442-37D0-4D56-9ED9-A8B3F9980977}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.DAL", "SistemVenta.DAL\SistemaVenta.DAL.csproj", "{E6A0C442-37D0-4D56-9ED9-A8B3F9980977}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaVenta.BLL", "SistemaVenta.BLL\SistemaVenta.BLL.csproj", "{E67B5648-8279-47AA-AB55-D6BD9703DD71}"
 EndProject

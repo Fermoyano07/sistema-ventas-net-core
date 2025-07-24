@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SistemaVenta.BLL\SistemaVenta.BLL.csproj" />
     <ProjectReference Include="..\SistemaVenta.IOC\SistemaVenta.IOC.csproj" />
-    <ProjectReference Include="..\SistemVenta.DAL\SistemVenta.DAL.csproj" />
+    <ProjectReference Include="..\SistemVenta.DAL\SistemaVenta.DAL.csproj" />
   </ItemGroup>
 
 </Project>

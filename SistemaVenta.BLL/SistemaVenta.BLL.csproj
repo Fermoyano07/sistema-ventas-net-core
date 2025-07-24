@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SistemaVenta.Entity\SistemaVenta.Entity.csproj" />
-    <ProjectReference Include="..\SistemVenta.DAL\SistemVenta.DAL.csproj" />
+    <ProjectReference Include="..\SistemVenta.DAL\SistemaVenta.DAL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
