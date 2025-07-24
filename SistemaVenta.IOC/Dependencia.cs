@@ -11,8 +11,8 @@ using SistemaVenta.DAL.Interfaces;
 using SistemaVenta.DAL.Implementacion;
 using SistemVenta.DAL.Interfaces;
 using SistemVenta.DAL.Implementacion;
-//using SistemaVenta.BLL.Interfaces;
-//using SistemaVenta.BLL.Implementacion;
+using SistemaVenta.BLL.Interfaces;
+using SistemaVenta.BLL.Implementacion;
 
 namespace SistemaVenta.IOC
 {
@@ -25,9 +25,14 @@ namespace SistemaVenta.IOC
                 options.UseSqlServer(Configuration.GetConnectionString("CadenaSQL"));
             });
 
+            //Registrar Ventas y realizar reportes
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             services.AddScoped<IVentaRepository, VentaRepository>();
+
+            //Enviar correos
+            services.AddScoped<ICorreoService, CorreoService>();
+
         }
     }
 }

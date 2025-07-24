@@ -11,9 +11,4 @@
     <ProjectReference Include="..\SistemVenta.DAL\SistemaVenta.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Implementacion\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>
