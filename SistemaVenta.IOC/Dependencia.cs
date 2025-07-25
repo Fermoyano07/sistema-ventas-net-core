@@ -33,6 +33,9 @@ namespace SistemaVenta.IOC
             //Enviar correos
             services.AddScoped<ICorreoService, CorreoService>();
 
+            //Servicio de FireBase Storage
+            services.AddScoped<IFireBaseService, FireBaseService>();
+
         }
     }
 }
