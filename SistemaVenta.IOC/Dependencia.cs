@@ -42,6 +42,9 @@ namespace SistemaVenta.IOC
             //Servicio de Roles
             services.AddScoped<IRolService, RolService>();
 
+            //Servicio de usuario
+            services.AddScoped<IUsuarioService, UsuarioService>();
+
         }
     }
 }
