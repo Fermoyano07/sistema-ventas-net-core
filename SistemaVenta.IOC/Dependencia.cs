@@ -36,6 +36,12 @@ namespace SistemaVenta.IOC
             //Servicio de FireBase Storage
             services.AddScoped<IFireBaseService, FireBaseService>();
 
+            //Servicio de utilizades
+            services.AddScoped<IUtilidadesService, UtilidadesService>();
+            
+            //Servicio de Roles
+            services.AddScoped<IRolService, RolService>();
+
         }
     }
 }
