@@ -22,7 +22,7 @@ namespace SistemaVenta.IOC
         public static void InyectarDependencia(this IServiceCollection services, IConfiguration Configuration) {
             services.AddDbContext<DbVentaContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("CadenaSQL"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
             //Registrar Ventas y realizar reportes

@@ -65,7 +65,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
 
                 string urlPlantillaCorreo = $"{this.Request.Scheme}://{this.Request.Host}/Plantilla/EnviarClave?correo=[correo]&clave=[clave]";
 
-                Usuario usuario_creado = await _usuarioService.Crear(_mapper.Map<Usuario>(vmUsuario),fotoStream, urlPlantillaCorreo);
+                Usuario usuario_creado = await _usuarioService.Crear(_mapper.Map<Usuario>(vmUsuario),fotoStream,nombreFoto, urlPlantillaCorreo);
 
                 vmUsuario = _mapper.Map<VMUsuario>(usuario_creado);
 
@@ -100,7 +100,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
                     fotoStream = foto.OpenReadStream();
                 }
 
-                Usuario usuario_editado = await _usuarioService.Editar(_mapper.Map<Usuario>(vmUsuario), fotoStream);
+                Usuario usuario_editado = await _usuarioService.Editar(_mapper.Map<Usuario>(vmUsuario), fotoStream, nombreFoto);
 
                 vmUsuario = _mapper.Map<VMUsuario>(usuario_editado);
 
