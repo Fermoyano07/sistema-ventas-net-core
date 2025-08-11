@@ -45,6 +45,9 @@ namespace SistemaVenta.IOC
             //Servicio de usuario
             services.AddScoped<IUsuarioService, UsuarioService>();
 
+            //Servicio de usuario
+            services.AddScoped<INegocioService, NegocioService>();
+
         }
     }
 }
