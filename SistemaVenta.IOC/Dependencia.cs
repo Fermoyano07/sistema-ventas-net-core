@@ -51,6 +51,9 @@ namespace SistemaVenta.IOC
             //Servicio de categoria
             services.AddScoped<ICategoriaService, CategoriaService>();
 
+            //Servicio de producto
+            services.AddScoped<IProductoService, ProductoService>();
+
         }
     }
 }
