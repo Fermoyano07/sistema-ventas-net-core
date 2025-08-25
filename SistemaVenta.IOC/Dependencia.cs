@@ -54,6 +54,12 @@ namespace SistemaVenta.IOC
             //Servicio de producto
             services.AddScoped<IProductoService, ProductoService>();
 
+            //Servicio de tipo de documento
+            services.AddScoped<ITipoDocumentoVentaService, TipoDocumentoVentaService>();
+
+            //Servicio de venta
+            services.AddScoped<IVentaService, VentaService>();
+
         }
     }
 }
