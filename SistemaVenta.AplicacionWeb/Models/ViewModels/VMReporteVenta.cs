@@ -2,7 +2,7 @@
 {
     public class VMReporteVenta
     {
-        public string? FechRegistro {  get; set; }
+        public string? FechaRegistro {  get; set; }
         public string? NumeroVenta {  get; set; }
         public string? TipoDocumento {  get; set; }
         public string? DocumentoCliente {  get; set; }

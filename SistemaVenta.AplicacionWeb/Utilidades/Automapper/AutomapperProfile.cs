@@ -159,7 +159,7 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
 
             CreateMap<DetalleVenta, VMReporteVenta>()
                 .ForMember(destino =>
-               destino.FechRegistro,
+               destino.FechaRegistro,
                opt => opt.MapFrom(origen => origen.IdVentaNavigation.FechaRegistro.Value.ToString("dd/MM/yyyy"))
                )
                 .ForMember(destino =>
