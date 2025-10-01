@@ -28,7 +28,7 @@ namespace SistemaVenta.BLL.Implementacion
             IGenericRepository<Producto> repositorioProducto
             )
         {
-                _repositorioVenta = repositorioVenta;
+            _repositorioVenta = repositorioVenta;
             _repositorioDetalleVenta = repositorioDetalleVenta;
             _repositorioCategoria = repositorioCategoria;
             _repositorioProducto = repositorioProducto;
@@ -101,17 +101,28 @@ namespace SistemaVenta.BLL.Implementacion
                 IQueryable<DetalleVenta> query = await _repositorioDetalleVenta.Consultar();
 
                 Dictionary<string, int> resultado = query
+                    //Original / Advertencia nulabilidad
+                    /*
                     .Include(v => v.IdVentaNavigation)
                     .Where(dv => dv.IdVentaNavigation.FechaRegistro.Value.Date >= FechaInicio.Date)
                     .GroupBy(dv => dv.DescripcionProducto).OrderByDescending(g => g.Count())
-                    .Select(dv => new { producto = dv.Key, total = dv.Count() })
+                    .Select(dv => new { producto = dv.Key, total = dv.Count() }).Take(4)
                     .ToDictionary(keySelector: r => r.producto, elementSelector: r => r.total);
+                    */
+                    //Corregida
+                    .Include(v => v.IdVentaNavigation)
+                            .Where(dv => dv.IdVentaNavigation.FechaRegistro.HasValue &&
+                                         dv.IdVentaNavigation.FechaRegistro.Value.Date >= FechaInicio.Date &&
+                                         dv.DescripcionProducto != null)
+                            .GroupBy(dv => dv.DescripcionProducto!)
+                            .OrderByDescending(g => g.Count())
+                            .Select(dv => new { producto = dv.Key!, total = dv.Count() })
+                            .Take(4)
+                            .ToDictionary(r => r.producto, r => r.total);
 
                 return resultado;
             }
             catch { throw; }
         }
-
-
     }
 }
