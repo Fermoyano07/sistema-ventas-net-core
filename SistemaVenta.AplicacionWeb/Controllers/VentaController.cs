@@ -8,6 +8,7 @@ using SistemaVenta.AplicacionWeb.Utilidades.Response;
 using SistemaVenta.BLL.Interfaces;
 using SistemaVenta.Entity;
 using SistemaVenta.Entity.Models;
+using System.Security.Claims;
 
 namespace SistemaVenta.AplicacionWeb.Controllers
 {
@@ -60,8 +61,14 @@ namespace SistemaVenta.AplicacionWeb.Controllers
 
             try 
             {
+                ClaimsPrincipal claimUser = HttpContext.User;
+
+                string idUsuario = claimUser.Claims
+                    .Where(c => c.Type == ClaimTypes.NameIdentifier)
+                    .Select(c => c.Value).SingleOrDefault();
+
                 //Usaurio para hacer prueba
-                modelo.IdUsuario = 1;
+                modelo.IdUsuario = int.Parse(idUsuario);
 
                 Venta venta_creada = await _ventaService.Registrar(_mapper.Map<Venta>(modelo));
                 modelo = _mapper.Map<VMVenta>(venta_creada);
